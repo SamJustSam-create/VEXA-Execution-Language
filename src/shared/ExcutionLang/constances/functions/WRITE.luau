@@ -4,9 +4,6 @@ local Types = require(ReplicatedStorage.Shared.ExcutionLang.constances.Types)
 
 
 return {
-  canTakeNumber = true,
-  canTakeMatrix = true,
-  canTakeString = false,
 
   callback = function (compiledCode: Types.compiledCode , value)
 
