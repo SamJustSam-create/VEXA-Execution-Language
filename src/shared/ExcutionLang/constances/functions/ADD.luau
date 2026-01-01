@@ -1,5 +1,4 @@
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local VRService = game:GetService("VRService")
 local Types = require(ReplicatedStorage.Shared.ExcutionLang.constances.Types)
 
 
