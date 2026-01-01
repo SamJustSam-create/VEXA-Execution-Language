@@ -21,6 +21,7 @@ local function ExcuteInstruction(compiledCode:Types.compiledCode , func: string 
   if functions:FindFirstChild(func) then
     local funcInfo: Types.func = require(functions:FindFirstChild(func))
 
+
     return funcInfo.callback(compiledCode, value)
   end
   return compiledCode

@@ -15,10 +15,6 @@ export type compiledCode = {
 
 
 export type func = {
-  canTakeNumber: boolean,
-  canTakeMatrix: boolean,
-  canTakeString: boolean,
-
   callback: (compiledCode , valuesWstring) -> compiledCode
 }
 
