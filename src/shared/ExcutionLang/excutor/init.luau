@@ -5,14 +5,13 @@ local functions = script.Parent.constances.functions
 local Types = require(script.Parent.constances.Types)
 
 local function SpecialValue(compiledCode , line:string)
-  local split = line:split(`"`)
+  local split = line:split(`(`)
 
   if SpecialValues:FindFirstChild(split[1]) then
     local Special:Types.SpecialValue = require(SpecialValues:FindFirstChild(split[1]))
-
-    return Special.callback(compiledCode, split[2])
+    return Special.callback(compiledCode, split[2]:split(")")[1]:split(`"`)[2])
   else
-    return split[2]
+    return line:split(`"`)[2]
   end
 end
 
@@ -20,7 +19,7 @@ end
 local function ExcuteInstruction(compiledCode:Types.compiledCode , func: string , value: number | {number} | string)
   if functions:FindFirstChild(func) then
     local funcInfo: Types.func = require(functions:FindFirstChild(func))
-
+    print(compiledCode)
 
     return funcInfo.callback(compiledCode, value)
   end

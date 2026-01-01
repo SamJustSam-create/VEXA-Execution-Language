@@ -6,10 +6,9 @@ local Types = require(ReplicatedStorage.Shared.ExcutionLang.constances.Types)
 return {
   callback = function (compiledCode: Types.compiledCode , value)
     if compiledCode.ActiveValue then -- to shut up the linter
-      compiledCode.cache[value] = compiledCode.ActiveValue
+      print(value)
+      return compiledCode.cache[value]
     end
-   
-
-    return compiledCode
+    return nil
   end
 }

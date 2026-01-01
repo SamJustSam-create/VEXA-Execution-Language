@@ -28,7 +28,9 @@ local function RemoveWhiteSpace(Code:string)
 
   for _ , V in Code:split("") do
     if V == " " or V == "\t" then
-      if last ~= " " and last ~= "\t" and last ~= ";" and last ~= ":" then
+      if last == "" then
+        continue
+      elseif last ~= " " and last ~= "\t" and last ~= ";" and last ~= ":" then
         newString ..= ":"
         last = ":"
         continue
@@ -51,8 +53,17 @@ end
 
 
 local function MakeInstruction(Line:string)
+  if Line == "" then
+    return nil
+  end
+
   local split = Line:split(":")
   local instruction: types.Instruction = {instruction = split[1] , value = ""}
+
+
+
+
+
 
   local isTable = if Line:match("{") then true else false
 
@@ -62,11 +73,13 @@ local function MakeInstruction(Line:string)
     instruction.value = split[2]
   end
 
+
+
+
   if Config.CompilerFunctionCheck then
     if functions:FindFirstChild(instruction.instruction) == nil then
-      error(`{instruction.instruction} Not found in functions folder`)
+      error(`"{instruction.instruction}" Not found in functions folder`)
     end
-
   end
 
 
