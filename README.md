@@ -21,7 +21,7 @@ will probly be out of date because the readme will be forgotten to update.
 ```text
 SET       : sets active value to value described
 ADD       : adds active value and value described
-WRITE     : writes active value to cache inlocation of sting described
+WRITE     : writes active value to cache inlocation of string described
 ```
 
 
