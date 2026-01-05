@@ -9,7 +9,16 @@ local function SpecialValue(compiledCode , line:string)
 
   if SpecialValues:FindFirstChild(split[1]) then
     local Special:Types.SpecialValue = require(SpecialValues:FindFirstChild(split[1]))
-    return Special.callback(compiledCode, split[2]:split(")")[1]:split(`"`)[2])
+    local value = ""
+
+    if split[2] then
+      if split[2]:split(")")[1]:split(`"`)[2] then
+        value = split[2]:split(")")[1]:split(`"`)[2]
+      end
+    end
+
+
+    return Special.callback(compiledCode, value)
   else
     return line:split(`"`)[2]
   end

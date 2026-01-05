@@ -14,3 +14,11 @@ String is definded with " and ended with another ".
 Tables are definded with { and closed with another }.
 
 once code has been excuted it will return a number or table with number.
+
+
+## functions
+will probly be out of date because the readme will be forgotten to update.
+
+
+## special values
+will probly be out of date because the readme will be forgotten to update.
