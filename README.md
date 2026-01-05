@@ -11,4 +11,6 @@ WRITE "ALPHA";
 ```
 New instruction is stated by putting ";".
 String is definded with " and ended with another ".
-Tables are definded with { and closed with another }
+Tables are definded with { and closed with another }.
+
+once code has been excuted it will return a number or table with number.
