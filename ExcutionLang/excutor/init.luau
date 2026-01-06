@@ -28,7 +28,7 @@ end
 local function ExcuteInstruction(compiledCode:Types.compiledCode , func: string , value: number | {number} | string)
   if functions:FindFirstChild(func) then
     local funcInfo: Types.func = require(functions:FindFirstChild(func))
-    print(compiledCode)
+    --print(compiledCode)
 
     return funcInfo.callback(compiledCode, value)
   end
@@ -57,6 +57,6 @@ return function(compiledCode: Types.compiledCode)
     compiledCode = ExcuteInstruction(compiledCode , V.instruction , value)
   end
 
-  print(compiledCode.ActiveValue)
+  --print(compiledCode.ActiveValue)
   return compiledCode.ActiveValue
 end
