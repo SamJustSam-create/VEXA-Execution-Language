@@ -38,6 +38,9 @@ return {
             compiledCode.ActiveValue[i] = comp + V
           end
         end
+      else
+        -- Handle number + number addition
+        compiledCode.ActiveValue += value
       end
     end
   

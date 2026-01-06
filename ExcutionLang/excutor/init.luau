@@ -58,4 +58,5 @@ return function(compiledCode: Types.compiledCode)
   end
 
   print(compiledCode.ActiveValue)
+  return compiledCode.ActiveValue
 end
