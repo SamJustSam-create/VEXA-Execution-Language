@@ -76,6 +76,22 @@ WRITE "ALPHA";
 
 > ⚠️ This list may become out of date. The README **will probably be forgotten**.
 
+## Implementation Status
+
+### ✅ Currently Implemented
+- `SET` - Set the active value
+- `ADD` - Add to the active value
+- `WRITE` - Write to cache
+- `READ()` - Read from cache
+
+### 🚧 Planned Features
+- `SUB`, `MUL`, `DIV` - Additional arithmetic operations
+- Conditional execution (IF/ELSE)
+- Loops (WHILE/FOR)
+- Function definitions
+- Scoped variables
+- Enhanced table operations
+
 ### `SET`
 
 Sets the active value to the provided value.
