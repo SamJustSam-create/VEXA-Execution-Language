@@ -81,11 +81,13 @@ WRITE "ALPHA";
 ### ✅ Currently Implemented
 - `SET` - Set the active value
 - `ADD` - Add to the active value
+- `SUB` - Subtract from the active value
+- `MUL` - Multiply the active value
+- `DIV` - Divide the active value
 - `WRITE` - Write to cache
 - `READ()` - Read from cache
 
 ### 🚧 Planned Features
-- `SUB`, `MUL`, `DIV` - Additional arithmetic operations
 - Conditional execution (IF/ELSE)
 - Loops (WHILE/FOR)
 - Function definitions
