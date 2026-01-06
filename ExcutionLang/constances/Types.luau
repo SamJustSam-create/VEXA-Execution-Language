@@ -20,10 +20,6 @@ export type func = {
 
 
 export type SpecialValue = {
-  canTakeNumber: boolean,
-  canTakeMatrix: boolean,
-  canTakeString: boolean,
-
   callback: (compiledCode , valuesWstring) -> values
 }
 

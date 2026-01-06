@@ -1,5 +1,4 @@
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local Types = require(ReplicatedStorage.Shared.ExcutionLang.constances.Types)
+local Types = require(script.Parent.Parent.Types)
 
 
 
