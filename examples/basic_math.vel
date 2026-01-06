@@ -1,0 +1,3 @@
+SET 100;
+ADD 50;
+WRITE "RESULT";

@@ -4,9 +4,9 @@ local Types = require(script.Parent.Parent.Types)
 
 return {
   callback = function (compiledCode: Types.compiledCode , value)
-    if compiledCode.ActiveValue then -- to shut up the linter
-      return compiledCode.cache[value]
+    if compiledCode.cache[value] == nil then
+      error(`Cache key "{value}" not found`)
     end
-    return nil
+    return compiledCode.cache[value]
   end
 }

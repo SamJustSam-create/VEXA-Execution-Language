@@ -1,9 +1,9 @@
-type valuesWstring = string | {string | number} | number
-type values = {string | number} | number
+type ValueWithString = string | {string | number} | number
+type Value = {string | number} | number
 
 export type Instruction = {
   instruction: string ,
-  value: valuesWstring,
+  value: ValueWithString,
 }
 
 
@@ -15,12 +15,12 @@ export type compiledCode = {
 
 
 export type func = {
-  callback: (compiledCode , valuesWstring) -> compiledCode
+  callback: (compiledCode , ValueWithString) -> compiledCode
 }
 
 
 export type SpecialValue = {
-  callback: (compiledCode , valuesWstring) -> values
+  callback: (compiledCode , ValueWithString) -> Value
 }
 
 

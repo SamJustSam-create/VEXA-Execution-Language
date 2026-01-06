@@ -1,5 +1,4 @@
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local Config = require(ReplicatedStorage.Shared.ExcutionLang.constances.Config)
+local Config = require(script.Parent.constances.Config)
 local types = require(script.Parent.constances.Types)
 
 local functions = script.Parent.constances.functions
