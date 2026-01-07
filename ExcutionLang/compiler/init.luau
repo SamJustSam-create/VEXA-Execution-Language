@@ -3,29 +3,24 @@ local types = require(script.Parent.constances.Types)
 
 local functions = script.Parent.constances.functions
 
-
 local OgPrint = print
 local OgError = error
 
-local function print(Text:any)
-  OgPrint(`[{script.Name}]` , Text)
+local function print(Text: any)
+  OgPrint(`[{script.Name}]`, Text)
 end
 
-local function error(Text:any , level)
+local function error(Text: any, level)
   level = level or 1
-  OgError(`[{script.Name}] {Text}`  , level)
+  OgError(`[{script.Name}] {Text}`, level)
 end
 
-
-
-
-
-local function RemoveWhiteSpace(Code:string)
+local function RemoveWhiteSpace(Code: string)
   local newString = ""
 
   local last = ""
 
-  for _ , V in Code:split("") do
+  for _, V in Code:split("") do
     if V == " " or V == "\t" then
       if last == "" then
         continue
@@ -44,25 +39,16 @@ local function RemoveWhiteSpace(Code:string)
     last = V
   end
 
-
-
-
   return newString
 end
 
-
-local function MakeInstruction(Line:string)
+local function MakeInstruction(Line: string)
   if Line == "" then
     return nil
   end
 
   local split = Line:split(":")
-  local instruction: types.Instruction = {instruction = split[1] , value = ""}
-
-
-
-
-
+  local instruction: types.Instruction = { instruction = split[1], value = "" }
 
   local isTable = if Line:match("{") then true else false
 
@@ -72,34 +58,26 @@ local function MakeInstruction(Line:string)
     instruction.value = split[2]
   end
 
-
-
-
   if Config.CompilerFunctionCheck then
     if functions:FindFirstChild(instruction.instruction) == nil then
       error(`"{instruction.instruction}" Not found in functions folder`)
     end
   end
 
-
   return instruction
 end
 
-
-
-return function(Code: string ) : types.compiledCode
-  local template: types.compiledCode = {instructions = {} , cache = {}, ActiveValue = 0}
+return function(Code: string): types.compiledCode
+  local template: types.compiledCode = { instructions = {}, cache = {}, ActiveValue = 0 }
 
   Code = RemoveWhiteSpace(Code)
 
-
   print(Code)
-  for _ , V in Code:split(";") do
-    table.insert(template.instructions , MakeInstruction(V))
+  for _, V in Code:split(";") do
+    table.insert(template.instructions, MakeInstruction(V))
   end
 
   print(template)
-
 
   return template
 end

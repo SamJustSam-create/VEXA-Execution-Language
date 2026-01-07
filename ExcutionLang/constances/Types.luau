@@ -1,34 +1,23 @@
-type ValueWithString = string | {string | number} | number
-type Value = {string | number} | number
+type ValueWithString = string | { string | number } | number
+type Value = { string | number } | number
 
 export type Instruction = {
-  instruction: string ,
+  instruction: string,
   value: ValueWithString,
 }
 
-
 export type compiledCode = {
-  instructions: {[number]:Instruction},
-  cache: {[string]:number | {number}?},
-  ActiveValue: number | {number}
+  instructions: { [number]: Instruction },
+  cache: { [string]: number | { number }? },
+  ActiveValue: number | { number },
 }
-
 
 export type func = {
-  callback: (compiledCode , ValueWithString) -> compiledCode
+  callback: (compiledCode, ValueWithString) -> compiledCode,
 }
-
 
 export type SpecialValue = {
-  callback: (compiledCode , ValueWithString) -> Value
+  callback: (compiledCode, ValueWithString) -> Value,
 }
-
-
-
-
-
-
-
-
 
 return nil
