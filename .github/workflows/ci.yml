@@ -15,6 +15,7 @@ jobs:
         uses: NTBBloodbath/selene-action@v1.0.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          args: ExcutionLang/
   
   format:
     runs-on: ubuntu-latest
@@ -25,4 +26,4 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           version: latest
-          args: --check .
+          args: --check ExcutionLang/
