@@ -1,0 +1,5 @@
+# Execution-critical areas require review from core maintainers
+/ExcutionLang/ @SamJustSam-create @ChickenStrips0572
+/runtime/ @SamJustSam-create @ChickenStrips0572
+/parser/ @SamJustSam-create @ChickenStrips0572
+/sandbox/ @SamJustSam-create @ChickenStrips0572
