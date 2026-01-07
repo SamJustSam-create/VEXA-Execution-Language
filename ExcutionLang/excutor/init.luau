@@ -33,17 +33,17 @@ local function ExcuteInstruction(compiledCode: Types.compiledCode, func: string,
 end
 
 return function(compiledCode: Types.compiledCode)
-  for i, V in compiledCode.instructions do
+  for _, V in compiledCode.instructions do
     local value = V.value
 
     if typeof(value) == "string" and tonumber(value) == nil then
       value = SpecialValue(compiledCode, value)
     elseif typeof(value) == "table" then
-      for m, V in value do
-        if typeof(V) == "string" and tonumber(V) == nil then
-          value[m] = SpecialValue(compiledCode, V)
+      for m, v in value do
+        if typeof(v) == "string" and tonumber(v) == nil then
+          value[m] = SpecialValue(compiledCode, v)
         else
-          value[m] = tonumber(V)
+          value[m] = tonumber(v)
         end
       end
     end

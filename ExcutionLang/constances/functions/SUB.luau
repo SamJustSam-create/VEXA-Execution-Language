@@ -8,13 +8,13 @@ return {
 
     if typeof(compiledCode.ActiveValue) == "table" then
       if typeof(value) == "table" then
-        for i, V in compiledCode.ActiveValue do
+        for i, _ in compiledCode.ActiveValue do
           if value[i] then
             compiledCode.ActiveValue[i] -= value[i]
           end
         end
       else
-        for i, V in compiledCode.ActiveValue do
+        for i, _ in compiledCode.ActiveValue do
           compiledCode.ActiveValue[i] -= value
         end
       end

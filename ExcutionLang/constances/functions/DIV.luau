@@ -8,7 +8,7 @@ return {
 
     if typeof(compiledCode.ActiveValue) == "table" then
       if typeof(value) == "table" then
-        for i, V in compiledCode.ActiveValue do
+        for i, _ in compiledCode.ActiveValue do
           if value[i] then
             if value[i] == 0 then
               error("Division by zero")
@@ -20,7 +20,7 @@ return {
         if value == 0 then
           error("Division by zero")
         end
-        for i, V in compiledCode.ActiveValue do
+        for i, _ in compiledCode.ActiveValue do
           compiledCode.ActiveValue[i] /= value
         end
       end
